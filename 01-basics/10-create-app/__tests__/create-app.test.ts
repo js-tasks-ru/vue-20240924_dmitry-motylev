@@ -26,7 +26,7 @@ describe('create-app', () => {
   it('рендерит строку "Сегодня: DATE" с сегодняшней датой локализовано в формате dateStyle: \'long\'', async () => {
     const app = document.getElementById('app')
     expect(app?.innerText).toContain(
-      `Сегодня ${new Date().toLocaleDateString('ru-RU', { dateStyle: 'long' })}`,
+      `Сегодня ${new Date().toLocaleDateString(navigator.language, { dateStyle: 'long' })}`,
     )
   })
 })
