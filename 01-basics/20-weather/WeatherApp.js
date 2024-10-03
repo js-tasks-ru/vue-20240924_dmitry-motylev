@@ -20,7 +20,7 @@ export default defineComponent({
     }
 
     function nowNight(dt, sunrise, sunset) {
-      return sunrise > dt && dt < sunset;
+      return sunrise > dt || dt > sunset
     }
 
     function nowNightForCurrent(current) {
