@@ -1,5 +1,5 @@
-import { computed, defineComponent, ref } from 'vue'
-import { UiFormGroup, UiInput } from '@shgk/vue-course-ui'
+import {computed, defineComponent, ref} from 'vue'
+import {UiFormGroup, UiInput} from '@shgk/vue-course-ui'
 import EmailList from './EmailList.js'
 
 // Значения взяты из https://jsonplaceholder.typicode.com/comments
@@ -69,7 +69,7 @@ export default defineComponent({
       <UiFormGroup>
         <UiInput v-model.trim="query" type="search" placeholder="Поиск" aria-label="Поиск" small />
       </UiFormGroup>
-      <EmailList :emails="markedEmails" />
+      <EmailList :emails="markedEmails" @delete-email="(index) => removeEmailByIndex(index)"/>
     </div>
   `,
 })

@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: 'EmailListItem',
@@ -15,10 +15,12 @@ export default defineComponent({
     },
   },
 
+  emits: ['deleteEmail'],
+
   template: `
     <li :class="{ marked }">
       {{ email }}
-      <button type="button" aria-label="Удалить" @click.stop>❌</button>
+      <button type="button" aria-label="Удалить" @click.stop="$emit('deleteEmail')">❌</button>
     </li>
   `,
 })
