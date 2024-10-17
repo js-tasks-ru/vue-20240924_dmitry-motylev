@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import {defineComponent} from 'vue'
 import EmailListItem from './EmailListItem.js'
 
 export default defineComponent({
@@ -15,6 +15,8 @@ export default defineComponent({
     },
   },
 
+  emits: ['deleteEmail'],
+
   template: `
     <ul class="emails-list unstyled-list" aria-label="Emails">
       <EmailListItem
@@ -22,6 +24,7 @@ export default defineComponent({
         :key="email"
         :email="email"
         :marked="isMarked"
+        @delete-email="$emit('deleteEmail', index)"
       />
     </ul>
   `,
