@@ -16,7 +16,6 @@ export default defineComponent({
   },
 
   setup() {
-
     function nowNight(dt, sunrise, sunset) {
       return sunrise > dt || dt > sunset
     }

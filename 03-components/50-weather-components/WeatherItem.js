@@ -12,7 +12,6 @@ export default defineComponent({
   },
 
   setup() {
-
     function formatKelvinTempToCelsius(kelvinTemp) {
       return (kelvinTemp - 273.15).toFixed(1) + " °C"
     }
